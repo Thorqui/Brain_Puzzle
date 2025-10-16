@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧩 Puzzle de Filas 5x5</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .game-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 600px;
+            width: 90%;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .game-info {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            font-size: 1.2em;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(5, 60px);
+            grid-template-rows: repeat(5, 60px);
+            gap: 5px;
+            margin: 30px auto;
+            justify-content: center;
+        }
+
+        .cell {
+            width: 60px;
+            height: 60px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .cell.black {
+            background-color: #333333;
+        }
+
+        .cell:hover {
+            transform: scale(1.05);
+        }
+
+        .message {
+            font-size: 1.5em;
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 10px;
+            background: rgba(76, 175, 80, 0.3);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .message.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stats {
+            font-size: 1.2em;
+            margin: 15px 0;
+        }
+
+        .new-game {
+            background: linear-gradient(45deg, #ff9800, #f57c00);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 15px;
+            transition: transform 0.2s;
+        }
+
+        .new-game:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2em; }
+            .grid { grid-template-columns: repeat(5, 50px); grid-template-rows: repeat(5, 50px); }
+            .cell { width: 50px; height: 50px; }
+            .game-container { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>🧩 Puzzle de Filas 5x5</h1>
+        
+        <div class="game-info">
+            <p>Objetivo: Haz que todos los cuadros sean del <strong>mismo color</strong> (blanco o negro). 🏆</p>
+            <p>Al tocar una celda, se cambian los colores de <strong>toda la fila</strong>. 🔄</p>
+        </div>
+
+        <div id="grid" class="grid"></div>
+
+        <div id="message" class="message"></div>
+
+        <div class="stats">
+            Movimientos: <strong id="moves">0</strong>
+        </div>
+
+        <button id="newGameButton" class="new-game">🔄 Nuevo Juego</button>
+    </div>
+
+    <script>
+        class RowPuzzleGame {
+            constructor() {
+                this.size = 5;
+                this.grid = [];
+                this.moves = 0;
+                
+                this.elements = {
+                    grid: document.getElementById('grid'),
+                    message: document.getElementById('message'),
+                    moves: document.getElementById('moves'),
+                    newGameBtn: document.getElementById('newGameButton')
+                };
+
+                this.init();
+            }
+
+            init() {
+                this.newGame();
+                this.elements.newGameBtn.addEventListener('click', () => this.newGame());
+            }
+
+            newGame() {
+                this.grid = this.generateRandomGrid();
+                this.moves = 0;
+                this.renderGrid();
+                this.updateMoves();
+                this.elements.message.classList.remove('show');
+            }
+
+            generateRandomGrid() {
+                return Array.from({ length: this.size }, () =>
+                    Array.from({ length: this.size }, () => Math.random() > 0.5 ? 'black' : 'white')
+                );
+            }
+
+            renderGrid() {
+                this.elements.grid.innerHTML = '';
+                this.grid.forEach((row, rowIndex) => {
+                    row.forEach((color, colIndex) => {
+                        const cell = document.createElement('div');
+                        cell.className = `cell ${color}`;
+                        cell.addEventListener('click', () => this.toggleRow(rowIndex));
+                        this.elements.grid.appendChild(cell);
+                    });
+                });
+            }
+
+            toggleRow(rowIndex) {
+                if (this.isGameWon()) return;
+
+                this.grid[rowIndex] = this.grid[rowIndex].map(color => 
+                    color === 'white' ? 'black' : 'white'
+                );
+                
+                this.moves++;
+                this.renderGrid();
+                this.updateMoves();
+                this.checkWin();
+            }
+
+            updateMoves() {
+                this.elements.moves.textContent = this.moves;
+            }
+
+            checkWin() {
+                const firstColor = this.grid[0][0];
+                const allSame = this.grid.every(row => 
+                    row.every(color => color === firstColor)
+                );
+                
+                if (allSame) {
+                    this.showMessage(`🎉 ¡Ganaste en ${this.moves} movimientos! 🏆`);
+                }
+            }
+
+            isGameWon() {
+                const firstColor = this.grid[0][0];
+                return this.grid.every(row => 
+                    row.every(color => color === firstColor)
+                );
+            }
+
+            showMessage(text) {
+                this.elements.message.textContent = text;
+                this.elements.message.classList.add('show');
+            }
+        }
+
+        // Inicializar el juego
+        window.addEventListener('DOMContentLoaded', () => {
+            new RowPuzzleGame();
+        });
+    </script>
+</body>
+</html>
