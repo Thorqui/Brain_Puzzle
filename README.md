@@ -24,16 +24,16 @@ Puzzle Estoico es un juego web donde cada clic en una celda invierte su color y 
   ```plaintext
   PuzzleEstoico/
   └── index.html      # Archivo único con HTML, CSS y JavaScript
-  ´´´
+  ```
 
 ## 🚀 Cómo Jugar
 Sigue estos pasos para disfrutar del Puzzle Estoico:
 
 Descarga o clona el repositorio
-  ´´´bash
+  ```bash
   bashgit clone https://github.com/Thorqui/PuzzleEstoico.git
   cd PuzzleEstoico
-  ´´´
+  ```
 
 Abre el juego
 Abre el archivo index.html en un navegador web o visita: https://thorqui.github.io/Brain_Puzzle/
@@ -79,4 +79,5 @@ Aitor Quilez Herrero (Thorqui)
 - No se requiere instalación de dependencias; el juego funciona directamente en cualquier navegador moderno.
 - Asegúrate de usar un navegador actualizado para una experiencia óptima.
 - El repositorio está disponible en: 🌐 https://github.com/Thorqui/PuzzleEstoico.
+
 
