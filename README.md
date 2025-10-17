@@ -1,37 +1,81 @@
-🧩 Puzzle Estoico
-Un adictivo juego de puzzle basado en la web que combina la lógica del clásico "Lights Out" con la sabiduría de la filosofía estoica. El objetivo es conseguir que toda la cuadrícula sea de un solo color (blanco o negro).
+# 🧩 Puzzle Estoico
 
-El juego está construido con HTML, CSS y JavaScript puros, todo dentro de un único archivo.
+Un adictivo **juego de puzzle basado en la web**, creado por **Raymond Tana**, que combina la lógica del clásico "Lights Out" con la sabiduría de la filosofía estoica. El objetivo es lograr que toda la cuadrícula sea de un solo color (blanco o negro) en el menor número de movimientos posible.
 
-🚀 Características
-Lógica Desafiante: Al hacer clic en una celda, se invierte su color y el de todas las celdas en su fila y columna.
+Construido con **HTML**, **CSS** y **JavaScript** puros en un único archivo, este rompecabezas matemático es perfecto para quienes buscan un desafío lógico con un toque filosófico.
 
-Niveles de Dificultad: Elige entre cuatro tamaños de cuadrícula para ajustar el reto:
 
+## 📋 Descripción
+
+Puzzle Estoico es un juego web donde cada clic en una celda invierte su color y el de todas las celdas en su fila y columna. Ofrece diferentes niveles de dificultad y recompensas en forma de metáforas estoicas al resolver cada puzzle. Su diseño responsive y minimalista lo hace ideal para cualquier dispositivo.
+
+
+## 🛠️ Tecnologías Utilizadas
+
+| Tecnología   | Descripción                     |
+|--------------|---------------------------------|
+| **HTML5**    | Estructura del juego            |
+| **CSS3**     | Estilos y diseño responsive     |
+| **JavaScript** | Lógica del puzzle y dinámica  |
+
+
+## 📂 Estructura del Proyecto
+
+```plaintext
+PuzzleEstoico/
+└── index.html      # Archivo único con HTML, CSS y JavaScript
+´´´
+
+## 🚀 Cómo Jugar
+Sigue estos pasos para disfrutar del Puzzle Estoico:
+
+Descarga o clona el repositorio
+´´´bash
+bashgit clone https://github.com/Thorqui/PuzzleEstoico.git
+cd PuzzleEstoico
+´´´
+
+Abre el juego
+Abre el archivo index.html en un navegador web o visita: https://github.com/Thorqui/PuzzleEstoico
+
+Juega
+
+Selecciona un nivel de dificultad (3x3, 5x5, 7x7 o 9x9) usando los botones.
+Haz clic en las celdas de la cuadrícula. Cada clic invierte el color de la celda, su fila y su columna.
+Resuelve el puzzle logrando que todas las celdas sean del mismo color.
+Recibe una metáfora estoica como recompensa al ganar.
+
+
+## 🎮 Características
+
+Lógica Desafiante: Cada clic invierte el color de la celda seleccionada y todas las celdas en su fila y columna.
+Niveles de Dificultad:
+
+2x2 (Modo prueba)
 3x3 (Fácil)
-
 5x5 (Normal)
-
 7x7 (Difícil)
-
 9x9 (Experto)
 
-Recompensas Filosóficas: Al resolver un puzzle, serás recompensado con una metáfora estoica única para cada nivel de dificultad.
+Recompensas Filosóficas: Recibe una metáfora estoica única al resolver cada nivel.
+Diseño Moderno: Interfaz limpia, responsive y adaptable a cualquier pantalla.
+Contador de Movimientos: Mide tu eficiencia y desafíate a resolver el puzzle en menos movimientos.
 
-Diseño Moderno: Una interfaz limpia y responsive que se adapta a cualquier tamaño de pantalla.
 
-Contador de Movimientos: Mide tu eficiencia y trata de resolver el puzzle en el menor número de movimientos posible.
+## 🧠 Objetivo del Proyecto
+Creado por Raymond Tana, este proyecto demuestra:
 
-🎮 Cómo Jugar
-Abre el archivo index.html en cualquier navegador web moderno.
+Diseño de un juego lógico basado en el clásico "Lights Out".
+Implementación eficiente con HTML, CSS y JavaScript puros en un solo archivo.
+Integración de filosofía estoica para una experiencia única y enriquecedora.
 
-Selecciona una dificultad usando los botones (3x3, 5x5, 7x7, o 9x9).
 
-Haz clic en las celdas de la cuadrícula. Cada clic invertirá el color de la celda pulsada, su fila y su columna.
+## 👨‍💻 Autor
+Aitor Quilez Herrero (Thorqui)
+🔗 GitHub - Thorqui
 
-El objetivo es que todas las celdas de la cuadrícula terminen siendo del mismo color.
+## 💡 Notas Adicionales
 
-¡Gana y recibe tu recompensa estoica!
-
-🛠️ Ejecución
-No se necesita ninguna instalación ni dependencia. Simplemente descarga el archivo HTML y ábrelo directamente en tu navegador.
+- No se requiere instalación de dependencias; el juego funciona directamente en cualquier navegador moderno.
+- Asegúrate de usar un navegador actualizado para una experiencia óptima.
+- El repositorio está disponible en: 🌐 https://github.com/Thorqui/PuzzleEstoico.
