@@ -35,15 +35,14 @@ Descarga o clona el repositorio
   cd PuzzleEstoico
   ```
 
-Abre el juego
+Abre el juego  
 Abre el archivo index.html en un navegador web o visita: https://thorqui.github.io/Brain_Puzzle/
 
 Juega
-
-Selecciona un nivel de dificultad (3x3, 5x5, 7x7 o 9x9) usando los botones.
-Haz clic en las celdas de la cuadrícula. Cada clic invierte el color de la celda, su fila y su columna.
-Resuelve el puzzle logrando que todas las celdas sean del mismo color.
-Recibe una metáfora estoica como recompensa al ganar.
+Selecciona un nivel de dificultad (3x3, 5x5, 7x7 o 9x9) usando los botones.  
+Haz clic en las celdas de la cuadrícula. Cada clic invierte el color de la celda, su fila y su columna.  
+Resuelve el puzzle logrando que todas las celdas sean del mismo color.  
+Recibe una metáfora estoica como recompensa al ganar.  
 
 
 ## 🎮 Características
@@ -51,23 +50,23 @@ Recibe una metáfora estoica como recompensa al ganar.
 Lógica Desafiante: Cada clic invierte el color de la celda seleccionada y todas las celdas en su fila y columna.
 Niveles de Dificultad:
 
-2x2 (Modo prueba)
-3x3 (Fácil)
-5x5 (Normal)
-7x7 (Difícil)
-9x9 (Experto)
+2x2 (Modo prueba)  
+3x3 (Fácil)  
+5x5 (Normal)  
+7x7 (Difícil)  
+9x9 (Experto)  
 
-Recompensas Filosóficas: Recibe una metáfora estoica única al resolver cada nivel.
-Diseño Moderno: Interfaz limpia, responsive y adaptable a cualquier pantalla.
-Contador de Movimientos: Mide tu eficiencia y desafíate a resolver el puzzle en menos movimientos.
+Recompensas Filosóficas: Recibe una metáfora estoica única al resolver cada nivel.  
+Diseño Moderno: Interfaz limpia, responsive y adaptable a cualquier pantalla.  
+Contador de Movimientos: Mide tu eficiencia y desafíate a resolver el puzzle en menos movimientos.  
 
 
 ## 🧠 Objetivo del Proyecto
-Creado por Raymond Tana, este proyecto demuestra:
+Creado por Raymond Tana, este proyecto demuestra:  
 
-Diseño de un juego lógico basado en el clásico "Lights Out".
-Implementación eficiente con HTML, CSS y JavaScript puros en un solo archivo.
-Integración de filosofía estoica para una experiencia única y enriquecedora.
+Diseño de un juego lógico basado en el clásico "Lights Out".  
+Implementación eficiente con HTML, CSS y JavaScript puros en un solo archivo.  
+Integración de filosofía estoica para una experiencia única y enriquecedora.  
 
 
 ## 👨‍💻 Autor
@@ -79,5 +78,6 @@ Aitor Quilez Herrero (Thorqui)
 - No se requiere instalación de dependencias; el juego funciona directamente en cualquier navegador moderno.
 - Asegúrate de usar un navegador actualizado para una experiencia óptima.
 - El repositorio está disponible en: 🌐 https://github.com/Thorqui/PuzzleEstoico.
+
 
 
